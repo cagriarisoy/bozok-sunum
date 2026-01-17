@@ -1,0 +1,943 @@
+{
+  "department": {
+    "university": "Yozgat Bozok Üniversitesi",
+    "name": "Bilgisayar Mühendisliği",
+    "year": "Ocak 2026",
+    "password": "123456",
+    "presentationTitle": "Bölüm Tanıtımı ve Akademik Faaliyetler",
+    "stats": {
+      "studentCount": 501,
+      "labCount": 4,
+      "foundedYear": 2016,
+      "academicStaff": 12
+    },
+    "vision": "Özgörümüz, verdiği eğitim ve öğretimle gelişen bilim ve teknolojiye göre kendisini güncelleyen, bilim ve teknolojinin gelişmesine katkı sağlayarak ulusal ve uluslararası ortamlarda en iyiler arasında yer alacak, sanayi ile bütünleşmiş ve toplum yararına bilgiler üreten bir bölüm olmaktır.",
+    "mission": "Özgörevimiz, çağın gereksinimleri doğrultusunda; tasarlayan, çözümleyen, uygulayabilen, sonuçları değerlendirip yorumlayan, eleştiren, sorumluluk alabilen, mesleki, hukuki, çevre ve etik değerlerine saygılı, ömür boyu öğrenmeyi, paylaşmayı, araştırmayı benimseyen bilgisayar mühendisleri yetiştirmektir.",
+    "performanceHistory": [
+      {
+        "year": 2023,
+        "articles": 4,
+        "citations": 40,
+        "projects": 9
+      },
+      {
+        "year": 2024,
+        "articles": 5,
+        "citations": 60,
+        "projects": 11
+      },
+      {
+        "year": 2025,
+        "articles": 6,
+        "citations": 85,
+        "projects": 15
+      }
+    ],
+    "publicationStats": {
+      "totalCount": 15,
+      "breakdown": [
+        {
+          "label": "SCI / SCI-E Makaleler",
+          "value": 9,
+          "max": 15,
+          "color": "bg-blue-600"
+        },
+        {
+          "label": "TR-Dizin ve Ulusal",
+          "value": 4,
+          "max": 15,
+          "color": "bg-blue-500"
+        },
+        {
+          "label": "Bildiriler",
+          "value": 2,
+          "max": 15,
+          "color": "bg-blue-400"
+        },
+        {
+          "label": "Kitap / Bölüm",
+          "value": 0,
+          "max": 15,
+          "color": "bg-blue-300"
+        }
+      ],
+      "yearlyTrend": [
+        {
+          "year": 2023,
+          "count": 4
+        },
+        {
+          "year": 2024,
+          "count": 5
+        },
+        {
+          "year": 2025,
+          "count": 6
+        }
+      ]
+    },
+    "projectStats": [
+      {
+        "year": 2023,
+        "t1001": 1,
+        "t1002": 0,
+        "t2209": 5,
+        "bap": 2,
+        "cost": 0,
+        "sayzek": 1,
+        "total": 9
+      },
+      {
+        "year": 2024,
+        "t1001": 0,
+        "t1002": 1,
+        "t2209": 8,
+        "bap": 1,
+        "cost": 1,
+        "sayzek": 0,
+        "total": 11
+      },
+      {
+        "year": 2025,
+        "t1001": 1,
+        "t1002": 1,
+        "t2209": 10,
+        "bap": 3,
+        "cost": 0,
+        "sayzek": 0,
+        "total": 15
+      }
+    ]
+  },
+  "faculty": [
+    {
+      "id": 100,
+      "name": "Prof. Dr. Mehmet BAKIR",
+      "title": "Bölüm Başkanı",
+      "email": "mehmet.bakir@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/mehmet.bakir",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 12,
+        "totalCitations": 450
+      },
+      "adminDuties": [
+        "Bölüm Başkanı",
+        "Fakülte Kurulu Üyeliği"
+      ],
+      "courses": [
+        "Algoritma",
+        "Veri Yapıları"
+      ],
+      "futureGoals": [
+        "Q1 Makale",
+        "TÜBİTAK 1001"
+      ],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 6,
+          "bap": 2,
+          "cost": 0,
+          "sayzek": 1,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 9,
+          "bap": 1,
+          "cost": 1,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 12,
+          "bap": 3,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [
+        {
+          "year": 2023,
+          "sci": 2,
+          "tr": 1,
+          "conf": 1,
+          "book": 0,
+          "total": 4
+        },
+        {
+          "year": 2024,
+          "sci": 3,
+          "tr": 1,
+          "conf": 1,
+          "book": 0,
+          "total": 5
+        },
+        {
+          "year": 2025,
+          "sci": 4,
+          "tr": 2,
+          "conf": 0,
+          "book": 0,
+          "total": 6
+        }
+      ],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 1,
+          "t1002": 0,
+          "t2209": 5,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 1,
+          "t2209": 8,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 1,
+          "t1002": 1,
+          "t2209": 10,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Dr. Öğr. Üyesi Ahmet Sertol KÖKSAL",
+      "title": "",
+      "email": "ahmet.koksal@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/ahmet.koksal",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 8,
+        "totalCitations": 210
+      },
+      "adminDuties": [],
+      "courses": [
+        "Ağlar",
+        "Web Programlama"
+      ],
+      "futureGoals": [
+        "SAYZEK Projesi"
+      ],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Dr. Öğr. Üyesi Gökalp ÇINARER",
+      "title": "",
+      "email": "gokalp.cinarer@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/gokalp.cinarer",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Dr. Öğr. Üyesi Hasan ULUTAŞ",
+      "title": "Bölüm Bşk. Yrd.",
+      "email": "hasan.ulutas@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/hasan.ulutas",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "name": "Dr. Öğr. Üyesi Çağrı ARISOY",
+      "title": "Bölüm Bşk. Yrd.",
+      "email": "cagri.arisoy@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/cagri.arisoy",
+      "image": "images/cagri-arisoy.png",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [
+        "Dekan Yrd."
+      ],
+      "courses": [
+        "Programama I-II",
+        " Web Programlama",
+        " Dosya Organizasyonu",
+        " İşletim Sistemleri",
+        " Blokzincir ve Kriptoparalar",
+        " Veri Madenciliği (YL)",
+        " Büyük Veri (YL)"
+      ],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "name": "Arş. Gör. Fatma Nur ORTATAŞ",
+      "title": "",
+      "email": "f.nur.ortatas@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/f.nur.ortatas",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "name": "Arş. Gör. Semih Can BOZOK",
+      "title": "",
+      "email": "s.can.bozok@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/s.can.bozok",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "name": "Arş. Gör. Zeliha AÇIKGÖZ",
+      "title": "",
+      "email": "zeliha.acikgoz@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/zeliha.acikgoz",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Arş. Gör. Fatma Selcen TURGUN",
+      "title": "",
+      "email": "f.selcen.bozkurt@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/f.selcen.bozkurt",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Arş. Gör. Enes Eren SÜZGEN",
+      "title": "",
+      "email": "e.eren.suzgen@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/e.eren.suzgen",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "name": "Arş. Gör. Ayça DOLAR",
+      "title": "",
+      "email": "ayca.dolar@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/ayca.dolar",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "name": "Arş. Gör. Esra YÜCE",
+      "title": "",
+      "email": "esra.yuce@yobu.edu.tr",
+      "website": "avesis.bozok.edu.tr/esra.yuce",
+      "image": "https://via.placeholder.com/150",
+      "metrics": {
+        "hIndex": 0,
+        "totalCitations": 0
+      },
+      "adminDuties": [],
+      "courses": [],
+      "futureGoals": [],
+      "projectsByYear": [
+        {
+          "year": 2023,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2024,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        },
+        {
+          "year": 2025,
+          "tubitak": 0,
+          "bap": 0,
+          "cost": 0,
+          "sayzek": 0,
+          "other": 0
+        }
+      ],
+      "yearlyPubs": [],
+      "tubitakDetailsByYear": [
+        {
+          "year": 2023,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2024,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        },
+        {
+          "year": 2025,
+          "t1001": 0,
+          "t1002": 0,
+          "t2209": 0,
+          "t3501": 0
+        }
+      ]
+    }
+  ]
+}
