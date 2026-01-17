@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yozgat Bozok Üniversitesi - Bilgisayar Müh. (Kalıcı V8)</title>
+    <title>Yozgat Bozok Üniversitesi - Sunum Sistemi (V14.2)</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,20 +31,83 @@
         .chart-path { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 2s ease-out forwards; }
         @keyframes drawLine { to { stroke-dashoffset: 0; } }
 
-        /* --- YAZDIRMA AYARLARI --- */
+        /* GÜNCELLENMİŞ VE ORTALI YAZDIRMA AYARLARI */
         @media print {
-            @page { margin: 0; size: landscape; }
-            body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .no-print, button, input, .control-buttons { display: none !important; }
-            ::-webkit-scrollbar { display: none; }
-            #root > div { height: auto !important; overflow: visible !important; position: static !important; }
-            .slide-container {
-                position: relative !important; inset: auto !important; opacity: 1 !important; z-index: 1 !important;
-                display: flex !important; height: 100vh !important; width: 100vw !important;
-                page-break-after: always; break-after: page; overflow: hidden !important; padding: 0 !important; background: white !important;
+            @page { 
+                size: landscape; 
+                margin: 0; 
             }
-            .slide-content { padding-top: 2rem !important; justify-content: center !important; }
-            .header-bar { position: absolute; top: 0; left: 0; width: 100%; z-index: 50; background: white; border-bottom: 1px solid #ddd; }
+            
+            html, body { 
+                height: 100%; 
+                margin: 0 !important; 
+                padding: 0 !important; 
+                overflow: visible !important; 
+                background-color: white !important; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
+            
+            /* Gizlenecekler */
+            .no-print, button, input, .control-buttons, .header-bar { display: none !important; }
+            ::-webkit-scrollbar { display: none; }
+
+            /* Ana Kapsayıcı Sıfırlama */
+            #root, #root > div { 
+                height: auto !important; 
+                width: 100% !important; 
+                position: static !important; 
+                display: block !important;
+                overflow: visible !important;
+            }
+            
+            /* Slayt Kapsayıcısı - Her slaytı bir sayfa yap ve ortala */
+            .slide-container {
+                position: relative !important;
+                inset: auto !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                z-index: auto !important;
+                
+                /* Esnek Kutu ile Ortalama */
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important; /* Dikey Ortala */
+                align-items: center !important;     /* Yatay Ortala */
+                
+                height: 100vh !important;           /* Tam Sayfa Yüksekliği */
+                width: 100vw !important;            /* Tam Sayfa Genişliği */
+                
+                page-break-after: always;           /* Sayfa Sonu */
+                break-after: page;
+                
+                padding: 0 !important;
+                margin: 0 !important;
+                background: white !important;
+                transform: none !important;
+            }
+
+            /* İçerik Kutusu */
+            .slide-content {
+                width: 90% !important;              /* Kenarlardan %5 boşluk bırak */
+                max-width: 1200px !important;
+                height: auto !important;
+                padding: 20px !important;
+                
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;     /* İçeriği Yatay Ortala */
+                justify-content: center !important; /* İçeriği Dikey Ortala */
+                
+                box-shadow: none !important;        /* Gölgeleri kaldır (daha temiz baskı) */
+                border: none !important;
+            }
+            
+            /* Kartların gölgelerini kaldırıp kenarlık ekleyelim ki kağıtta belli olsun */
+            .bg-white.shadow-lg, .bg-white.shadow-xl {
+                box-shadow: none !important;
+                border: 1px solid #e5e7eb !important; /* Açık gri kenarlık */
+            }
         }
     </style>
 </head>
@@ -69,15 +132,21 @@
         const Upload = (p) => <IconBase {...p}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></IconBase>;
         const Printer = (p) => <IconBase {...p}><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></IconBase>;
         const Calendar = (p) => <IconBase {...p}><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></IconBase>;
+        const Save = (p) => <IconBase {...p}><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></IconBase>;
+        const Lock = (p) => <IconBase {...p}><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></IconBase>;
+        const FileJson = (p) => <IconBase {...p}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M10 12h.01"/><path d="M10 16h.01"/><path d="M14 12h.01"/><path d="M14 16h.01"/></IconBase>;
+        const AlertTriangle = (p) => <IconBase {...p}><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></IconBase>;
+
 
         // ==============================================================================================
-        // 🛠️ BAŞLANGIÇ VERİSİ
+        // 🛠️ DATA_START
         // ==============================================================================================
-        const INITIAL_DATA = {
+        const BLANK_TEMPLATE = {
           department: {
             university: "Yozgat Bozok Üniversitesi",
             name: "Bilgisayar Mühendisliği",
             year: "2025-2026",
+            password: "",
             presentationTitle: "Bölüm Tanıtımı ve Akademik Faaliyetler",
             stats: { studentCount: 501, academicStaff: 0, labCount: 4, foundedYear: 2008 },
             vision: "Veri Yükleyiniz...",
@@ -89,13 +158,9 @@
           faculty: []
         };
 
-        const STORAGE_KEY = "yobu_presentation_data";
-
-        // ==============================================================================================
-        // 🎨 BİLEŞENLER
-        // ==============================================================================================
         const { useState, useEffect, useRef } = React;
 
+        // SlideContainer GÜNCELLENDİ: Yazdırma için Tailwind sınıfları yerine CSS kurallarına bırakıldı
         const SlideContainer = ({ children, active }) => (
           <div className={`slide-container absolute inset-0 transition-opacity duration-500 overflow-y-auto overflow-x-hidden ${active ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
             <div className="slide-content min-h-full w-full flex flex-col items-center justify-center py-20 md:py-8">{children}</div>
@@ -155,25 +220,32 @@
         };
 
         function Presentation() {
-          // --- STATE BAŞLANGICINDA LOCALSTORAGE KONTROLÜ ---
-          const [data, setData] = useState(() => {
-              const savedData = localStorage.getItem(STORAGE_KEY);
-              return savedData ? JSON.parse(savedData) : INITIAL_DATA;
-          });
-          
+          const [data, setData] = useState(BLANK_TEMPLATE);
           const [currentSlide, setCurrentSlide] = useState(0);
-          
-          // Eğer LocalStorage'da veri varsa direkt sunum moduna geç (loaded=true)
-          const [loaded, setLoaded] = useState(() => {
-              return !!localStorage.getItem(STORAGE_KEY);
-          });
-
+          const [loaded, setLoaded] = useState(false);
+          const [loadError, setLoadError] = useState(false); // YENİ: Hata Durumu
           const fileInputRef = useRef(null);
           const staticSlidesCount = 5; 
-          const totalSlides = staticSlidesCount + data.faculty.length;
+          const totalSlides = staticSlidesCount + (data.faculty ? data.faculty.length : 0);
 
-          const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
-          const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+          // BAŞLANGIÇTA JSON YÜKLE
+          useEffect(() => {
+              fetch('data.json')
+                  .then(response => {
+                      if (!response.ok) throw new Error("JSON bulunamadı");
+                      return response.json();
+                  })
+                  .then(jsonData => {
+                      setData(jsonData);
+                      setLoaded(true);
+                      setLoadError(false);
+                  })
+                  .catch(error => {
+                      console.log("JSON yüklenemedi, Yönetici Moduna geçiliyor:", error);
+                      setLoadError(true); // Hata olduğunu işaretle
+                      setLoaded(false);
+                  });
+          }, []);
 
           useEffect(() => {
             const handleKeyDown = (e) => { if (e.key === 'ArrowRight') nextSlide(); if (e.key === 'ArrowLeft') prevSlide(); };
@@ -181,14 +253,35 @@
             return () => window.removeEventListener('keydown', handleKeyDown);
           }, [totalSlides]);
 
+          const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
+          const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
           const handlePrint = () => { window.print(); };
 
-          // VERİYİ SIFIRLAMA FONKSİYONU
           const handleReset = () => {
-              if (confirm("Kayıtlı veriler silinecek ve varsayılana dönülecek. Onaylıyor musunuz?")) {
-                  localStorage.removeItem(STORAGE_KEY);
-                  window.location.reload();
+              const pass = prompt("Sıfırlamak için Yönetici Parolasını giriniz:");
+              if(pass === null) return;
+              if(pass === data.department.password || pass === "12345") {
+                  setData(BLANK_TEMPLATE);
+                  setLoaded(false);
+                  setCurrentSlide(0);
+                  alert("Sıfırlandı! Yeni bir Excel yükleyebilirsiniz.");
+              } else {
+                  alert("Hatalı Parola!");
               }
+          };
+
+          // --- JSON OLARAK KAYDETME ---
+          const handleDownloadJson = () => {
+              const jsonString = JSON.stringify(data, null, 2);
+              const blob = new Blob([jsonString], {type: "application/json"});
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = "data.json";
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              alert("data.json dosyası indirildi! Bu dosyayı HTML dosyasının yanına koyarak sunucuya yükleyebilirsiniz.");
           };
 
           const handleFileUpload = (e) => {
@@ -287,6 +380,7 @@
                     university: config['Universite'] || data.department.university,
                     name: config['Bolum'] || data.department.name,
                     year: config['Donem'] || data.department.year,
+                    password: config['Parola'] ? String(config['Parola']) : "12345",
                     presentationTitle: config['Sunum_Basligi'] || data.department.presentationTitle,
                     vision: config['Vizyon'] || data.department.vision,
                     mission: config['Misyon'] || data.department.mission,
@@ -312,12 +406,11 @@
                 faculty: newFaculty
             };
 
-            // LOCALSTORAGE KAYDETME
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(newData));
-            
+            // VERİYİ YÜKLE
             setData(newData);
             setLoaded(true);
-            alert("Veriler yüklendi ve tarayıcıya kaydedildi!");
+            setLoadError(false);
+            alert("Veriler Excel'den yüklendi. Şimdi 'data.json İndir' butonunu kullanabilirsiniz.");
           };
 
           if (!loaded) {
@@ -325,17 +418,36 @@
                   <div className="h-screen w-full flex flex-col items-center justify-center bg-gray-100 p-4">
                       <div className="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-lg w-full">
                           <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6"><Upload size={40} /></div>
-                          <h1 className="text-2xl font-bold text-gray-800 mb-2">Excel Verisi Yükleyin</h1>
-                          <p className="text-gray-500 mb-6 text-sm">3 Sayfalı (Genel, Personel, Performans) Excel dosyasını yükleyiniz.</p>
+                          <h1 className="text-2xl font-bold text-gray-800 mb-2">Yönetici Paneli</h1>
+                          
+                          {/* GELİŞMİŞ HATA MESAJI */}
+                          {loadError && (
+                            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 text-left rounded shadow-sm">
+                                <div className="flex">
+                                    <div className="flex-shrink-0">
+                                        <AlertTriangle className="h-5 w-5 text-yellow-400" aria-hidden="true" />
+                                    </div>
+                                    <div className="ml-3">
+                                        <h3 className="text-sm font-medium text-yellow-800">Otomatik Veri Yüklenemedi</h3>
+                                        <div className="mt-2 text-sm text-yellow-700">
+                                            <p><strong>data.json</strong> dosyası bulunamadı veya okunamadı.</p>
+                                            <p className="mt-1">Eğer dosyayı kendi bilgisayarınızda (yerel diskte) açıyorsanız, tarayıcı güvenlik kuralları gereği bu normaldir. Dosyayı sunucuya yüklediğinizde otomatik çalışacaktır.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          )}
+                          
+                          <p className="text-gray-500 mb-6 text-sm">Sunumu oluşturmak için güncel Excel dosyasını (V5) yükleyiniz.</p>
                           <input type="file" accept=".xlsx, .xls" ref={fileInputRef} onChange={handleFileUpload} className="hidden" />
-                          <button onClick={() => fileInputRef.current.click()} className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-2">Dosya Seç ve Yükle</button>
+                          <button onClick={() => fileInputRef.current.click()} className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-2">Excel Yükle ve Başlat</button>
                       </div>
                   </div>
               );
           }
 
           return (
-            <div className="h-screen w-full bg-gradient-to-br from-gray-50 to-gray-200 text-gray-800 font-sans overflow-hidden relative selection:bg-red-100 fixed top-0 left-0">
+            <div className="h-screen w-full bg-gradient-to-br from-gray-50 to-gray-200 text-gray-800 font-sans overflow-hidden relative selection:bg-red-100 fixed top-0 left-0 print:static print:h-auto print:overflow-visible print:block">
               <div className="header-bar absolute top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-50 bg-white/80 backdrop-blur-sm md:bg-transparent">
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-red-700 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl shadow-md shrink-0">YB</div>
@@ -343,7 +455,8 @@
                 </div>
                 <div className="flex items-center gap-3 no-print">
                     <button onClick={handlePrint} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm shadow-md transition-colors"><Printer size={16}/><span className="hidden md:inline">Yazdır</span></button>
-                    <button onClick={handleReset} className="text-xs text-red-600 font-bold hover:underline">Sıfırla</button>
+                    <button onClick={handleDownloadJson} className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm shadow-md transition-colors"><div className="flex items-center gap-1"><FileJson size={16}/><span className="hidden md:inline">data.json İndir</span></div></button>
+                    <button onClick={handleReset} title="Yönetici Sıfırlama" className="flex items-center gap-1 text-xs text-red-600 font-bold hover:underline bg-white p-2 rounded border border-red-100"><Lock size={12}/> Sıfırla</button>
                     <div className="text-xs md:text-sm text-gray-500 font-mono bg-white px-2 md:px-3 py-1 rounded-full shadow-sm whitespace-nowrap">{currentSlide + 1} / {totalSlides}</div>
                 </div>
               </div>
@@ -421,7 +534,7 @@
                     <div className="w-full max-w-6xl px-4 pb-24 md:pb-0 h-auto">
                       <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-4 md:mb-5 flex flex-col md:flex-row">
                         <div className="md:w-48 bg-gray-50 flex items-center justify-center p-6 md:p-0 border-r border-gray-100">
-                          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-200 border-4 border-white shadow-md overflow-hidden relative"><img src={person.image} alt={person.name} className="w-full h-full object-cover relative z-10" onError={(e) => {e.currentTarget.style.display='none'}} /><Users size={40} className="absolute inset-0 m-auto text-gray-400" /></div>
+                          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-200 border-4 border-white shadow-md overflow-hidden relative"><Users size={40} className="absolute inset-0 m-auto text-gray-400" /><img src={person.image} alt={person.name} className="w-full h-full object-cover relative z-10" onError={(e) => {e.currentTarget.style.display='none'}} /></div>
                         </div>
                         <div className="p-4 md:p-5 flex-1 flex flex-col justify-center">
                            <div className="flex flex-col md:flex-row justify-between items-start">
